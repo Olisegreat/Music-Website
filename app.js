@@ -1,33 +1,6 @@
 const musicInfoCont = document.getElementById("music-for-all")
 let currentPosition = 0;
 
-// function nextAndPrevPlays(sOne,nsOne,psOne,npOne,ppOne,npsOne,ppsOne) {
-//     if (sOne.paused == true) {
-//         nsOne.pause()
-//         npOne.style.display = "block"
-//         npsOne.style.display = "none"
-//     }
-//     else{
-//         sOne.pause()
-//         npOne.style.display = "none"
-//         npsOne.style.display = "block"
-//         nsOne.play()
-//         console.log("no");
-//     }
-
-//     if (sOne.paused == true) {
-//         psOne.pause()
-//         ppOne.style.display = "block"
-//         ppsOne.style.display = "none"
-//     }
-//     else{
-//         sOne.pause()
-//         ppOne.style.display = "none"
-//         ppsOne.style.display = "block"
-//         psOne.play()
-//         console.log("no");
-//     }
-// }
 function playlist(play,pause,next,prev) {
     play.forEach((p)=>{
         p.addEventListener("click",()=>{
@@ -59,19 +32,21 @@ function playlist(play,pause,next,prev) {
             let nextSound = n.parentElement.parentElement.parentElement.nextSibling.querySelector(".audios")
             let nextPlayBtn = n.parentElement.parentElement.parentElement.nextSibling.querySelector(".play")
             let nextPauseBtn = n.parentElement.parentElement.parentElement.nextSibling.querySelector(".pause")
+            let nextImage = n.parentElement.parentElement.parentElement.nextSibling.querySelector(".img-cont")
             let sound = n.parentElement.parentElement.querySelector(".audios")
-            console.log(nextSound);
+            console.log(nextImage);
 
-            // nextAndPrevPlays(sound,nextSound,prevSound,nextPlayBtn,prevPlayBtn,nextPauseBtn,prevPauseBtn)
             if (sound.paused == true) {
                 nextSound.pause()
                 nextPlayBtn.style.display = "block"
                 nextPauseBtn.style.display = "none"
+                nextImage.classList.remove("spin-coupe")
             }
             else{
                 sound.pause()
                 nextPlayBtn.style.display = "none"
                 nextPauseBtn.style.display = "block"
+                nextImage.classList.add("spin-coupe")
                 nextSound.play()
                 console.log("no");
             }
@@ -92,17 +67,20 @@ function playlist(play,pause,next,prev) {
             let prevSound = pr.parentElement.parentElement.parentElement.previousSibling.querySelector(".audios")
             let prevPlayBtn = pr.parentElement.parentElement.parentElement.previousSibling.querySelector(".play")
             let prevPauseBtn = pr.parentElement.parentElement.parentElement.previousSibling.querySelector(".pause")
+            let prevImage = pr.parentElement.parentElement.parentElement.previousSibling.querySelector(".img-cont")
             let sound = pr.parentElement.parentElement.querySelector(".audios")
             console.log(prevSound);
             if (sound.paused == true) {
                 prevSound.pause()
                 prevPlayBtn.style.display = "block"
                 prevPauseBtn.style.display = "none"
+                prevImage.classList.remove("spin-coupe")
             }
             else{
                 sound.pause()
                 prevPlayBtn.style.display = "none"
                 prevPauseBtn.style.display = "block"
+                prevImage.classList.add("spin-coupe")
                 prevSound.play()
                 console.log("no");
             }
