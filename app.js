@@ -1,6 +1,33 @@
 const musicInfoCont = document.getElementById("music-for-all")
 let currentPosition = 0;
 
+// function nextAndPrevPlays(sOne,nsOne,psOne,npOne,ppOne,npsOne,ppsOne) {
+//     if (sOne.paused == true) {
+//         nsOne.pause()
+//         npOne.style.display = "block"
+//         npsOne.style.display = "none"
+//     }
+//     else{
+//         sOne.pause()
+//         npOne.style.display = "none"
+//         npsOne.style.display = "block"
+//         nsOne.play()
+//         console.log("no");
+//     }
+
+//     if (sOne.paused == true) {
+//         psOne.pause()
+//         ppOne.style.display = "block"
+//         ppsOne.style.display = "none"
+//     }
+//     else{
+//         sOne.pause()
+//         ppOne.style.display = "none"
+//         ppsOne.style.display = "block"
+//         psOne.play()
+//         console.log("no");
+//     }
+// }
 function playlist(play,pause,next,prev) {
     play.forEach((p)=>{
         p.addEventListener("click",()=>{
@@ -29,6 +56,25 @@ function playlist(play,pause,next,prev) {
 
     next.forEach((n)=>{
         n.addEventListener("click",()=>{
+            let nextSound = n.parentElement.parentElement.parentElement.nextSibling.querySelector(".audios")
+            let nextPlayBtn = n.parentElement.parentElement.parentElement.nextSibling.querySelector(".play")
+            let nextPauseBtn = n.parentElement.parentElement.parentElement.nextSibling.querySelector(".pause")
+            let sound = n.parentElement.parentElement.querySelector(".audios")
+            console.log(nextSound);
+
+            // nextAndPrevPlays(sound,nextSound,prevSound,nextPlayBtn,prevPlayBtn,nextPauseBtn,prevPauseBtn)
+            if (sound.paused == true) {
+                nextSound.pause()
+                nextPlayBtn.style.display = "block"
+                nextPauseBtn.style.display = "none"
+            }
+            else{
+                sound.pause()
+                nextPlayBtn.style.display = "none"
+                nextPauseBtn.style.display = "block"
+                nextSound.play()
+                console.log("no");
+            }
             currentPosition += 1;
             console.log(currentPosition);                                  
             if (currentPosition == allSongs.length) {
@@ -43,6 +89,27 @@ function playlist(play,pause,next,prev) {
 
     prev.forEach((pr)=>{
         pr.addEventListener("click",()=>{
+            let prevSound = pr.parentElement.parentElement.parentElement.previousSibling.querySelector(".audios")
+            let prevPlayBtn = pr.parentElement.parentElement.parentElement.previousSibling.querySelector(".play")
+            let prevPauseBtn = pr.parentElement.parentElement.parentElement.previousSibling.querySelector(".pause")
+            let sound = pr.parentElement.parentElement.querySelector(".audios")
+            console.log(prevSound);
+            if (sound.paused == true) {
+                prevSound.pause()
+                prevPlayBtn.style.display = "block"
+                prevPauseBtn.style.display = "none"
+            }
+            else{
+                sound.pause()
+                prevPlayBtn.style.display = "none"
+                prevPauseBtn.style.display = "block"
+                prevSound.play()
+                console.log("no");
+            }
+            if (currentPosition == 0) {
+                console.log(allSongs.length);
+                currentPosition = 10
+            }
             currentPosition -= 1
             console.log(currentPosition);
 
