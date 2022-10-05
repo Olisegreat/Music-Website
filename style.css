@@ -1,0 +1,34 @@
+.maintape{
+    background: unset;
+}
+#current-lo{
+    top: -45%;
+}
+#current-lo-volume{
+  top: -34%;
+}
+#song-img.spin-coupe{
+    animation: spin 4s linear infinite;
+}
+#soong-img{
+  height: 450px;
+  width: 450px;
+}
+#timer{
+  width: 0%;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media screen and (max-width: 414px) {
+    #album-name{
+      font-size: 12px;
+    }
+  }
