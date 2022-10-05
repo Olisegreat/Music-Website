@@ -102,8 +102,8 @@ function playlist(play,pause,next,prev) {
 
 
 let showSongs = allMusicInfo.map((m)=>{
-    return `<div class="shrink-0 w-full flex p-8 flex-wrap flex-col items-center all-songs">
-                <div class="md:w-2/5 flex flex-col justify-between">
+    return `<div class="shrink-0 w-full lg:flex p-8 flex-wrap flex-col items-center all-songs">
+                <div class="lg:w-2/5 flex flex-col justify-between">
                     <div class="border-4 p-1.5 border-zinc-900 rounded-full img-cont" id="song-img">
                         <img src="${m.songImage}" alt="" class="h-full w-full rounded-full">
                     </div>
@@ -134,7 +134,7 @@ let showSongs = allMusicInfo.map((m)=>{
                         <i class="fa-solid fa-pause hidden text-7xl cursor-pointer pause hover:bg-zinc-700 md:p-2.5 rounded-full md:px-5"></i>
                         <i class="fa-solid fa-forward text-4xl md:text-6xl cursor-pointer next hover:bg-zinc-700 md:p-2.5 rounded-full md:pl-3.5"></i>
                     </div>
-                    <div class="mt-20 md:mt-20 mb-8 flex justify-center items-center  md:w-8/12">
+                    <div class="mt-1.5 md:mt-20 mb-8 flex justify-center items-center  md:w-8/12">
                     <i class="fa-solid fa-volume-low"></i>
                         <div id="length" class="w-5/6 md:w-4/12 mx-2.5 h-1.5 bg-zinc-300 rounded-l-full rounded-r-full">
                             <div class="h-full bg-white rounded-l-full rounded-r-full relative " id="timer">

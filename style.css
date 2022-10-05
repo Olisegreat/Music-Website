@@ -27,8 +27,11 @@
     }
   }
 
-  @media screen and (max-width: 414px) {
-    #album-name{
+  @media screen and (max-width: 566pxpx) {
+    .img-cont{
       font-size: 12px;
+      width: 430px;
     }
+
   }
+ 
